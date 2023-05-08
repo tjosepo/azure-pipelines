@@ -1,0 +1,1 @@
+# Azure Pipelines Custom Task Template
