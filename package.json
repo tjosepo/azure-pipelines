@@ -1,25 +1,12 @@
 {
-  "name": "custom-az-task",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
+  "name": "@tjosepo/azure-pipelines",
+  "private": true,
   "scripts": {
-    "build": "vite build",
-    "watch": "vite build --watch",
-    "test": "vitest"
+    "build": "pnpm -r run build",
+    "package": "tfx extension create --manifest-globs vss-extension.json",
+    "publish": "tfx extension publish --manifest-globs vss-extension.json --share-with tommyjosepovic0409"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "azure-devops-extension-sdk": "^3.1.2",
-    "azure-pipelines-task-lib": "^4.3.1"
-  },
-  "devDependencies": {
-    "@types/node": "^20.1.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.4",
-    "vite": "^4.3.5",
-    "vitest": "^0.31.0"
+    "tfx-cli": "^0.14.0"
   }
 }

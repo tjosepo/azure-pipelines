@@ -1,0 +1,47 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "bb4f9fa3-1a6a-46b5-8d01-c07bf757d577",
+  "name": "CloudflarePagesComment",
+  "friendlyName": "Cloudflare Pages Comment",
+  "description": "Creates a comment on a pull-request about the preview deployment associated with the current branch.",
+  "helpMarkDown": "",
+  "category": "Utility",
+  "author": "tjosepo",
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "instanceNameFormat": "Echo $(samplestring)",
+  "inputs": [
+    {
+      "name": "projectName",
+      "type": "string",
+      "label": "Name of the Cloudflare Pages project",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Name of project"
+    },
+    {
+      "name": "apiToken",
+      "type": "string",
+      "label": "Cloudflare API Token",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "API Token"
+    },
+    {
+      "name": "accountId",
+      "type": "string",
+      "label": "Cloudflare Account ID",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Account ID"
+    }
+  ],
+  "execution": {
+    "Node16": {
+      "target": "dist/index.js"
+    }
+  }
+}

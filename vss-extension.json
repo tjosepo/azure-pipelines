@@ -1,0 +1,36 @@
+{
+  "manifestVersion": 1,
+  "id": "build-release-task",
+  "name": "@tjosepo/azure-pipelines",
+  "version": "0.1.0",
+  "publisher": "tjosepo",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Tools for building/releasing.",
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "icons": {
+    "default": "icon.png"
+  },
+  "files": [
+    {
+      "path": "CloudflarePagesComment"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "custom-build-release-task",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "CloudflarePagesComment"
+      }
+    }
+  ]
+}

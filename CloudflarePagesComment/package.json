@@ -1,0 +1,22 @@
+{
+  "name": "@tjosepo/azure-pipelines-cloudflare-pages-comment",
+  "author": "Tommy Josépovic",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prune": "pnpm prune --prod"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "azure-devops-node-api": "^12.0.0",
+    "azure-pipelines-task-lib": "^4.3.1",
+    "node-fetch": "^2.6.11"
+  },
+  "devDependencies": {
+    "@cloudflare/types": "^6.21.8",
+    "@types/node": "^20.1.0",
+    "@types/node-fetch": "^2.6.3",
+    "typescript": "^5.0.4"
+  }
+}
