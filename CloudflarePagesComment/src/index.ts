@@ -22,7 +22,11 @@ async function main() {
     const accountId = tl.getInput("accountId", true);
     const projectName = tl.getInput("projectName", true);
     const commitHash = tl.getVariable("Build.SourceVersion");
-    const smallHash = commitHash?.substring(0, 7);
+
+    if (!commitHash) {
+      tl.setResult(tl.TaskResult.Failed, " ⚠️ Could not find commit hash.");
+      return;
+    }
 
     console.log("Connecting to Cloudflare API.");
 
@@ -39,17 +43,17 @@ async function main() {
   <table>
     <tbody>
       <tr>
-        <td><b>Latest commit:<b></td>
+        <td><b>Latest commit:</b></td>
         <td><code>${commitHash}</code></td>
       </tr>
       <tr>
-        <td><b>Status:<b></td>
+        <td><b>Status:</b></td>
         <td>⚠️&nbsp; Could not connect to Cloudflare API.</td>
       </tr>
     </tbody
   </table>
 </div>
- `;
+`;
 
       tl.setResult(
         tl.TaskResult.SucceededWithIssues,
@@ -62,11 +66,6 @@ async function main() {
     }
 
     console.log("✅ Connection to Cloudflare API successful.");
-
-    if (!smallHash) {
-      tl.setResult(tl.TaskResult.Failed, " ⚠️ Could not find commit hash.");
-      return;
-    }
 
     const { result } = (await response.json()) as { result: Deployment[] };
     const deployment = result.find((deployment) =>
@@ -81,11 +80,11 @@ async function main() {
   <table>
     <tbody>
       <tr>
-        <td><b>Latest commit:<b></td>
+        <td><b>Latest commit:</b></td>
         <td><code>${commitHash}</code></td>
       </tr>
       <tr>
-        <td><b>Status:<b></td>
+        <td><b>Status:</b></td>
         <td>⚠️&nbsp; Could not find deployment.</td>
       </tr>
     </tbody
@@ -110,11 +109,11 @@ async function main() {
   <table>
     <tbody>
       <tr>
-        <td><b>Latest commit:<b></td>
+        <td><b>Latest commit:</b></td>
         <td><code>${commitHash}</code></td>
       </tr>
       <tr>
-        <td><b>Status:<b></td>
+        <td><b>Status:</b></td>
         <td>✅&nbsp; Deploy successful!</td>
       </tr>
       <tr>

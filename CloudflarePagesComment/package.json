@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "prune": "pnpm prune --prod"
+    "build": "node build.mjs",
+    "test": "vitest"
   },
   "license": "ISC",
   "dependencies": {
@@ -17,6 +17,8 @@
     "@cloudflare/types": "^6.21.8",
     "@types/node": "^20.1.0",
     "@types/node-fetch": "^2.6.3",
-    "typescript": "^5.0.4"
+    "esbuild": "^0.17.18",
+    "typescript": "^5.0.4",
+    "vitest": "^0.31.1"
   }
 }

@@ -33,18 +33,12 @@ This project uses pnpm. You can install it with:
 npm i -g pnpm
 ```
 
-To package the extension, you first need to compile the `CloudflarePagesComment` task:
+To package the extension:
 
 ```
-cd ./CloudflarePagesComment
 pnpm install
 pnpm run build
-pnpm run prune
-```
-
-Then, at the root of the project, you can create the package with:
-
-```
-pnpm install
 pnpm run package
 ```
+
+You can then publish the extension on the Visual Studio Marketplace.

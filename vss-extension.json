@@ -18,7 +18,13 @@
   },
   "files": [
     {
-      "path": "CloudflarePagesComment"
+      "path": "CloudflarePagesComment/dist"
+    },
+    {
+      "path": "CloudflarePagesComment/task.json"
+    },
+    {
+      "path": "CloudflarePagesComment/icon.png"
     }
   ],
   "contributions": [
