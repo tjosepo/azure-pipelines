@@ -1,5 +1,5 @@
 import * as esbuild from 'esbuild'
-import { shellJsPlugin } from '../utils/shelljs-plugin.mjs'
+import azurePipelinesTaskLibFix from '@tjosepo/azure-pipelines-testing-library'
 
 await esbuild.build({
   entryPoints: ['./src/index.js'],
@@ -8,5 +8,5 @@ await esbuild.build({
   platform: "node",
   target: "node16",
   allowOverwrite: true,
-  plugins: [shellJsPlugin],
+  plugins: [azurePipelinesTaskLibFix()],
 });

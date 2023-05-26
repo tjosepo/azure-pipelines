@@ -1,8 +1,9 @@
 {
-  "name": "@tjosepo/azure-pipelines-cloudflare-pages-comment",
+  "name": "@tjosepo/azure-pipelines-testing-library",
+  "type": "module",
   "author": "Tommy Josépovic",
   "version": "0.0.0",
-  "main": "dist/index.js",
+  "main": "index.ts",
   "private": true,
   "scripts": {
     "build": "node build.mjs",
@@ -10,17 +11,12 @@
   },
   "license": "ISC",
   "dependencies": {
-    "azure-devops-node-api": "^12.0.0",
-    "azure-pipelines-task-lib": "^4.3.1",
-    "node-fetch": "^2.6.11"
+    "esbuild": "^0.17.18",
+    "tmp-promise": "^3.0.3"
   },
   "devDependencies": {
-    "@cloudflare/types": "^6.21.8",
-    "@tjosepo/azure-pipelines-testing-library": "workspace:*",
     "@tjosepo/esbuild-plugin-azure-pipelines-task-lib-fix": "workspace:*",
     "@types/node": "^20.1.0",
-    "@types/node-fetch": "^2.6.3",
-    "esbuild": "^0.17.18",
     "typescript": "^5.0.4",
     "vitest": "^0.31.1"
   }

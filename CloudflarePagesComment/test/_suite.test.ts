@@ -1,28 +1,21 @@
-import * as path from 'node:path';
+import { join } from 'node:path';
 import * as ttm from 'azure-pipelines-task-lib/mock-test';
 import { expect, test } from 'vitest';
+import { buildTask } from '@tjosepo/azure-pipelines-testing-library';
+
+const taskPath = join(__dirname, '../src/index.ts');
 
 test('Skipped outside of pull-request', async () => {
-  let tp = path.join(__dirname, 'outside-pull-request.js');
-  let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
-
-  tr.run();
-  expect(tr.succeeded).toBeTruthy()
-  expect(tr.warningIssues.length).toBe(0);
-  expect(tr.errorIssues.length).toBe(0);
-  expect(tr.stdout.includes("result=Skipped")).toBeTruthy();
+  const task = await buildTask(taskPath);
+  const result = await task.run();
+  expect(result.status).toBe("Skipped");
 });
 
 // TODO: more tests, but I couldn't find much documentation on testing
-// test('Throws when `projectName` is missing', async () => {
-//   let tp = path.join(__dirname, 'missing-name-param.js');
-//   let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
-
-//   tr.run();
-//   console.log(tr.stdout)
-  
-//   expect(tr.succeeded).toBeTruthy()
-//   expect(tr.warningIssues.length).toBe(0);
-//   expect(tr.errorIssues.length).toBe(1);
-//   expect(tr.stdout.includes("result=Skipped")).toBeTruthy();
-// });
+// EDIT: I made my own testing lib lol
+test('Throws when `projectName` is missing', async () => {
+  let task = await buildTask(taskPath);
+  task.setVariable("System.PullRequest.PullRequestId", "1");
+  const result = await task.run();
+  expect(result.status).toBe("Failed");
+});

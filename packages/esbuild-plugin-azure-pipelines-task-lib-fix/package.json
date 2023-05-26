@@ -1,0 +1,12 @@
+{
+  "name": "@tjosepo/esbuild-plugin-azure-pipelines-task-lib-fix",
+  "type": "module",
+  "author": "Tommy Josépovic",
+  "version": "0.0.0",
+  "main": "index.mjs",
+  "private": true,
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.17.18"
+  }
+}

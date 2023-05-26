@@ -23,6 +23,12 @@ importers:
       '@cloudflare/types':
         specifier: ^6.21.8
         version: 6.21.8
+      '@tjosepo/azure-pipelines-testing-library':
+        specifier: workspace:*
+        version: link:../packages/azure-pipelines-testing-library
+      '@tjosepo/esbuild-plugin-azure-pipelines-task-lib-fix':
+        specifier: workspace:*
+        version: link:../packages/esbuild-plugin-azure-pipelines-task-lib-fix
       '@types/node':
         specifier: ^20.1.0
         version: 20.1.0
@@ -38,6 +44,34 @@ importers:
       vitest:
         specifier: ^0.31.1
         version: 0.31.1
+
+  packages/azure-pipelines-testing-library:
+    dependencies:
+      esbuild:
+        specifier: ^0.17.18
+        version: 0.17.18
+      tmp-promise:
+        specifier: ^3.0.3
+        version: 3.0.3
+    devDependencies:
+      '@tjosepo/esbuild-plugin-azure-pipelines-task-lib-fix':
+        specifier: workspace:*
+        version: link:../esbuild-plugin-azure-pipelines-task-lib-fix
+      '@types/node':
+        specifier: ^20.1.0
+        version: 20.1.0
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
+      vitest:
+        specifier: ^0.31.1
+        version: 0.31.1
+
+  packages/esbuild-plugin-azure-pipelines-task-lib-fix:
+    devDependencies:
+      esbuild:
+        specifier: ^0.17.18
+        version: 0.17.18
 
 packages:
 
@@ -95,7 +129,6 @@ packages:
     cpu: [arm64]
     os: [android]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/android-arm@0.17.18:
@@ -104,7 +137,6 @@ packages:
     cpu: [arm]
     os: [android]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/android-x64@0.17.18:
@@ -113,7 +145,6 @@ packages:
     cpu: [x64]
     os: [android]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/darwin-arm64@0.17.18:
@@ -122,7 +153,6 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/darwin-x64@0.17.18:
@@ -131,7 +161,6 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/freebsd-arm64@0.17.18:
@@ -140,7 +169,6 @@ packages:
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/freebsd-x64@0.17.18:
@@ -149,7 +177,6 @@ packages:
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-arm64@0.17.18:
@@ -158,7 +185,6 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-arm@0.17.18:
@@ -167,7 +193,6 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-ia32@0.17.18:
@@ -176,7 +201,6 @@ packages:
     cpu: [ia32]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-loong64@0.17.18:
@@ -185,7 +209,6 @@ packages:
     cpu: [loong64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-mips64el@0.17.18:
@@ -194,7 +217,6 @@ packages:
     cpu: [mips64el]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-ppc64@0.17.18:
@@ -203,7 +225,6 @@ packages:
     cpu: [ppc64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-riscv64@0.17.18:
@@ -212,7 +233,6 @@ packages:
     cpu: [riscv64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-s390x@0.17.18:
@@ -221,7 +241,6 @@ packages:
     cpu: [s390x]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-x64@0.17.18:
@@ -230,7 +249,6 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/netbsd-x64@0.17.18:
@@ -239,7 +257,6 @@ packages:
     cpu: [x64]
     os: [netbsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/openbsd-x64@0.17.18:
@@ -248,7 +265,6 @@ packages:
     cpu: [x64]
     os: [openbsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/sunos-x64@0.17.18:
@@ -257,7 +273,6 @@ packages:
     cpu: [x64]
     os: [sunos]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/win32-arm64@0.17.18:
@@ -266,7 +281,6 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/win32-ia32@0.17.18:
@@ -275,7 +289,6 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/win32-x64@0.17.18:
@@ -284,7 +297,6 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@jridgewell/sourcemap-codec@1.4.15:
@@ -422,7 +434,7 @@ packages:
     resolution: {integrity: sha512-h+hTREBXcW5e1L9RihGXdH4PHHdGipG/jE2sMZrqIH6BmZAxeGU5IWjVsKhokdCSWX7km6Kkh406zZNEElHFPQ==}
     engines: {node: '>= 0.10.0'}
     dependencies:
-      glob: 7.1.2
+      glob: 7.2.3
       graceful-fs: 4.2.11
       lazystream: 1.0.1
       lodash: 4.17.21
@@ -437,7 +449,7 @@ packages:
       archiver-utils: 1.3.0
       async: 2.6.4
       buffer-crc32: 0.2.13
-      glob: 7.1.2
+      glob: 7.2.3
       lodash: 4.17.21
       readable-stream: 2.3.8
       tar-stream: 1.6.2
@@ -903,7 +915,6 @@ packages:
       '@esbuild/win32-arm64': 0.17.18
       '@esbuild/win32-ia32': 0.17.18
       '@esbuild/win32-x64': 0.17.18
-    dev: true
 
   /escape-string-regexp@1.0.5:
     resolution: {integrity: sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==}
@@ -1857,6 +1868,13 @@ packages:
     engines: {node: '>= 0.4.0'}
     dev: false
 
+  /rimraf@3.0.2:
+    resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    hasBin: true
+    dependencies:
+      glob: 7.2.3
+    dev: false
+
   /rollup@3.23.0:
     resolution: {integrity: sha512-h31UlwEi7FHihLe1zbk+3Q7z1k/84rb9BSwmBSr/XjOCEaBJ2YyedQDuM0t/kfOS0IxM+vk1/zI9XxYj9V+NJQ==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
@@ -2151,11 +2169,24 @@ packages:
     engines: {node: '>= 0.2.0'}
     dev: false
 
+  /tmp-promise@3.0.3:
+    resolution: {integrity: sha512-RwM7MoPojPxsOBYnyd2hy0bxtIlVrihNs9pj5SUvY8Zz1sQcQG2tG1hSr8PDxfgEB8RNKDhqbIlroIarSNDNsQ==}
+    dependencies:
+      tmp: 0.2.1
+    dev: false
+
   /tmp@0.0.26:
     resolution: {integrity: sha512-XYEM7aFncfdEdU4/3jUG2edvFAryxtKbahJXTv8WK34MoOmexbbyNyneT3nY8yPVD3h0J1b5fL6kqlDoyuebQQ==}
     engines: {node: '>=0.4.0'}
     dependencies:
       os-tmpdir: 1.0.2
+    dev: false
+
+  /tmp@0.2.1:
+    resolution: {integrity: sha512-76SUhtfqR2Ijn+xllcI5P1oyannHNHByD80W1q447gU3mp9G9PSpGdWmjUOHRDPiHYacIk66W7ubDTuPF3BEtQ==}
+    engines: {node: '>=8.17.0'}
+    dependencies:
+      rimraf: 3.0.2
     dev: false
 
   /to-buffer@1.1.1:
