@@ -1,5 +1,5 @@
 import * as esbuild from 'esbuild'
-import azurePipelinesTaskLibFix from '@tjosepo/azure-pipelines-testing-library'
+import azurePipelinesTaskLibFix from '@tjosepo/esbuild-plugin-azure-pipelines-task-lib-fix'
 
 await esbuild.build({
   entryPoints: ['./src/index.js'],

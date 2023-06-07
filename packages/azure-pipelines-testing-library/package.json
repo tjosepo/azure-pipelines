@@ -4,14 +4,16 @@
   "author": "Tommy Josépovic",
   "version": "0.0.0",
   "main": "index.ts",
-  "private": true,
-  "scripts": {
-    "build": "node build.mjs",
-    "test": "vitest"
+  "engines": {
+    "node": ">=20.0.0"
   },
-  "license": "ISC",
+  "private": true,
+  "scripts": {},
+  "license": "MIT",
   "dependencies": {
+    "@mswjs/interceptors": "0.22.15",
     "esbuild": "^0.17.18",
+    "headers-polyfill": "^3.1.2",
     "tmp-promise": "^3.0.3"
   },
   "devDependencies": {

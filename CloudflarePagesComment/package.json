@@ -8,7 +8,7 @@
     "build": "node build.mjs",
     "test": "vitest"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "azure-devops-node-api": "^12.0.0",
     "azure-pipelines-task-lib": "^4.3.1",

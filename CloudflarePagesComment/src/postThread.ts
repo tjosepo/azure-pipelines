@@ -6,16 +6,12 @@ import {
   GitPullRequestCommentThread,
 } from "azure-devops-node-api/interfaces/GitInterfaces";
 
-export default async function postThread(content: string): Promise<boolean> {
-  try {
+
+export default async function postThread(content: string): Promise<void> {
     const pullRequestId = tl.getVariable("System.PullRequest.PullRequestId");
 
     if (!pullRequestId) {
-      tl.setResult(
-        tl.TaskResult.SucceededWithIssues,
-        " ⚠️ Could not post comment. Pipeline was not caused by a pull-request.",
-      );
-      return false;
+      throw new Error("Cannot post thread. The pipeline was not triggered by a pull request.");
     }
 
     const accessToken = tl.getEndpointAuthorizationParameter(
@@ -42,13 +38,4 @@ export default async function postThread(content: string): Promise<boolean> {
     };
 
     await gitApi.createThread(newThread, repositoryId!, Number(pullRequestId));
-
-    return true;
-  } catch (e: unknown) {
-    tl.setResult(
-      tl.TaskResult.SucceededWithIssues,
-      " ⚠️ Could not post comment. Make sure the build service has the 'Contribute to pull requests' premission set to 'Allowed'.",
-    );
-    return false;
-  }
 }

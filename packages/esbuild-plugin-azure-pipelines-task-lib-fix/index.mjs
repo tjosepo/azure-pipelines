@@ -1,7 +1,6 @@
 // @ts-check
 
-import { assert } from "node:console";
-import { readFile, copyFile, constants} from "node:fs/promises";
+import { readFile, copyFile} from "node:fs/promises";
 import { dirname, join } from "node:path";
 
 /**
@@ -15,7 +14,7 @@ import { dirname, join } from "node:path";
  * 
  * @type {() => import("esbuild").Plugin}
  */
-export default function shelljsFix() {
+export default function azurePipelinesTaskLibFix() {
   return {
     name: "shelljs-fix",
     setup(build) {

@@ -4,8 +4,9 @@
   "author": "Tommy Josépovic",
   "version": "0.0.0",
   "main": "index.mjs",
+  "types": "index.d.ts",
   "private": true,
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "esbuild": "^0.17.18"
   }
