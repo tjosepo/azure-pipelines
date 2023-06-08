@@ -5,9 +5,9 @@ import postThread from "./postThread.js";
 
 async function main() {
   try {
-    const pullRequestId = tl.getVariable("System.PullRequest.PullRequestId");
+    const buildReason = tl.getVariable("Build.Reason");
 
-    if (!pullRequestId) {
+    if (buildReason !== "PullRequest") {
       console.log("Skipping. This build was not caused by a pull-request.");
       tl.setResult(
         tl.TaskResult.Skipped,
@@ -146,8 +146,12 @@ async function main() {
         " ⚠️ Could not post comment. Make sure the build service has the 'Contribute to pull requests' premission set to 'Allowed'."
       );
     }
-  } catch (e: any) {
-    tl.setResult(tl.TaskResult.Failed, e.message);
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      tl.setResult(tl.TaskResult.Failed, e.message);
+    } else {
+      tl.setResult(tl.TaskResult.Failed, `An unknown error occured: ${e}`);
+    }
   }
 }
 

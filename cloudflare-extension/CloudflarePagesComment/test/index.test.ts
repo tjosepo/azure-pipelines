@@ -3,7 +3,7 @@ import { expect, test } from "vitest";
 import { buildTask } from "@tjosepo/azure-pipelines-testing-library";
 import type { Deployment } from "@cloudflare/types";
 
-const taskPath = join(__dirname, "../src/index.ts");
+const taskPath = require.resolve("../src/index.ts");
 
 test("Skip when outside of pull-request", async () => {
   const task = await buildTask(taskPath);
