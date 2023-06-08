@@ -8,10 +8,10 @@ async function main() {
     const buildReason = tl.getVariable("Build.Reason");
 
     if (buildReason !== "PullRequest") {
-      console.log("Skipping. This build was not caused by a pull-request.");
+      console.log("Skipping. This build was not caused by a pull request.");
       tl.setResult(
         tl.TaskResult.Skipped,
-        "Skipping. This build was not caused by a pull-request."
+        "Skipping. This build was not caused by a pull request."
       );
       return;
     }

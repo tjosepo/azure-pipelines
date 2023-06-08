@@ -3,11 +3,12 @@
   "type": "module",
   "author": "Tommy Josépovic",
   "version": "0.0.0",
-  "main": "index.mjs",
-  "types": "index.d.ts",
+  "main": "src/index.js",
   "private": true,
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.17.18"
+    "@types/node": "^20.1.0",
+    "esbuild": "^0.17.18",
+    "typescript": "^5.0.4"
   }
 }

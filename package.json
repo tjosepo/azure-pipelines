@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "@tjosepo/azure-pipelines",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "package": "cd ./cloudflare-extension && tfx extension create --manifest-globs vss-extension.json"
+  },
+  "dependencies": {
+    "tfx-cli": "^0.14.0"
+  }
+}

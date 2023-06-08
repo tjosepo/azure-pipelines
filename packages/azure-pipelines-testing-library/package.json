@@ -3,21 +3,20 @@
   "type": "module",
   "author": "Tommy Josépovic",
   "version": "0.0.0",
-  "main": "index.ts",
+  "main": "./src/index.ts",
   "engines": {
     "node": ">=20.0.0"
   },
   "private": true,
-  "scripts": {},
   "license": "MIT",
   "dependencies": {
     "@mswjs/interceptors": "0.22.15",
+    "@tjosepo/esbuild-plugin-azure-pipelines-task-lib-fix": "workspace:*",
     "esbuild": "^0.17.18",
     "headers-polyfill": "^3.1.2",
     "tmp-promise": "^3.0.3"
   },
   "devDependencies": {
-    "@tjosepo/esbuild-plugin-azure-pipelines-task-lib-fix": "workspace:*",
     "@types/node": "^20.1.0",
     "typescript": "^5.0.4",
     "vitest": "^0.31.1"

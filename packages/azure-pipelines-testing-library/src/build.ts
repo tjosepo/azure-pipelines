@@ -3,10 +3,13 @@ import azurePipelinesTaskLibFix from "@tjosepo/esbuild-plugin-azure-pipelines-ta
 import tmp from "tmp-promise";
 import { join } from "node:path";
 import { Task } from "./task";
+import { fileURLToPath } from 'node:url';
 
 const buildCache = new Map<string, Promise<string>>();
 
-export async function buildTask(path: string): Promise<Task> {
+export async function buildTask(src: string | URL): Promise<Task> {
+  const path = (src instanceof URL) ? fileURLToPath(src) : src;
+
   if (!buildCache.has(path)) {
     const tmpDir = await tmp.dir({ unsafeCleanup: true });
     const outfile = join(tmpDir.path, `./bundledTask-${Math.random()}.cjs`);

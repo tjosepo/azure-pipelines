@@ -1,16 +1,17 @@
 {
   "$schema": "http://json.schemastore.org/vss-extension",
   "manifestVersion": 1,
-  "id": "tjosepo-cloudflare-extension",
+  "id": "cloudflare-extension",
   "name": "Cloudflare Deployment Extension",
   "version": "0.1.0",
   "publisher": "tjosepo",
+  "public": false,
   "targets": [
     {
       "id": "Microsoft.VisualStudio.Services"
     }
   ],
-  "description": "An Azure Pipelines Task Extension for projects using Cloudflare",
+  "description": "Azure Pipelines task for Cloudflare",
   "categories": [
     "Azure Pipelines"
   ],
@@ -20,7 +21,7 @@
     }
   },
   "icons": {
-    "default": "icon.gif"
+    "default": "icon.png"
   },
   "files": [
     {
@@ -32,6 +33,13 @@
     {
       "path": "CloudflarePagesComment/icon.png"
     }
+  ],
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/tjosepo/azure-pipelines"
+  },
+  "tags": [
+    "Cloudflare"
   ],
   "contributions": [
     {

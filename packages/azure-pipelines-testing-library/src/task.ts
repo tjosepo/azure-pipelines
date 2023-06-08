@@ -1,7 +1,6 @@
 import { Worker } from "node:worker_threads";
 import { Command, isCommand, parseCommands } from "./command";
 import { serializeResponse } from "./mock";
-import { join } from "node:path";
 
 function requestReviver(key: string, value: any) {
   switch (key) {
@@ -63,7 +62,7 @@ export class Task {
   async run() {
     let stdout = "";
     return new Promise<TaskResult>((resolve, reject) => {
-      const worker = new Worker(join(__dirname, "worker.cjs"), {
+      const worker = new Worker(new URL("./worker.cjs", import.meta.url), {
         workerData: { 
           file: this.#outfile
         },
@@ -92,7 +91,6 @@ export class Task {
           if (mock.route === capturedRequest.url) {
             const mockedResponse = await mock.handler(capturedRequest);
             const serializedResponse = await serializeResponse(mockedResponse as any, requestJson.id);
-            console.log("Sending response to worker")
             worker.postMessage(serializedResponse);
             break;
           }

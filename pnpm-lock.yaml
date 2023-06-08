@@ -8,16 +8,16 @@ importers:
         specifier: ^0.14.0
         version: 0.14.0(typescript@5.0.4)
 
-  CloudflarePagesComment:
+  cloudflare-extension/CloudflarePagesComment:
     dependencies:
       azure-devops-node-api:
-        specifier: ^12.0.0
+        specifier: 12.0.0
         version: 12.0.0
       azure-pipelines-task-lib:
-        specifier: ^4.3.1
+        specifier: 4.3.1
         version: 4.3.1
       node-fetch:
-        specifier: ^2.6.11
+        specifier: 2.6.11
         version: 2.6.11
     devDependencies:
       '@cloudflare/types':
@@ -25,10 +25,10 @@ importers:
         version: 6.21.8
       '@tjosepo/azure-pipelines-testing-library':
         specifier: workspace:*
-        version: link:../packages/azure-pipelines-testing-library
+        version: link:../../packages/azure-pipelines-testing-library
       '@tjosepo/esbuild-plugin-azure-pipelines-task-lib-fix':
         specifier: workspace:*
-        version: link:../packages/esbuild-plugin-azure-pipelines-task-lib-fix
+        version: link:../../packages/esbuild-plugin-azure-pipelines-task-lib-fix
       '@types/node':
         specifier: ^20.1.0
         version: 20.1.0
@@ -50,6 +50,9 @@ importers:
       '@mswjs/interceptors':
         specifier: 0.22.15
         version: 0.22.15
+      '@tjosepo/esbuild-plugin-azure-pipelines-task-lib-fix':
+        specifier: workspace:*
+        version: link:../esbuild-plugin-azure-pipelines-task-lib-fix
       esbuild:
         specifier: ^0.17.18
         version: 0.17.18
@@ -60,9 +63,6 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
     devDependencies:
-      '@tjosepo/esbuild-plugin-azure-pipelines-task-lib-fix':
-        specifier: workspace:*
-        version: link:../esbuild-plugin-azure-pipelines-task-lib-fix
       '@types/node':
         specifier: ^20.1.0
         version: 20.1.0
@@ -75,9 +75,15 @@ importers:
 
   packages/esbuild-plugin-azure-pipelines-task-lib-fix:
     devDependencies:
+      '@types/node':
+        specifier: ^20.1.0
+        version: 20.1.0
       esbuild:
         specifier: ^0.17.18
         version: 0.17.18
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
 
 packages:
 

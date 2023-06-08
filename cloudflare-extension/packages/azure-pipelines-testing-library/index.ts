@@ -1,1 +1,0 @@
-export { buildTask } from './src/build';

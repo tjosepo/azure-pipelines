@@ -12,7 +12,7 @@ import { dirname, join } from "node:path";
  * To solve this issue, we replace the `shelljs/shell.js` file with our own
  * file which imports the dependencies explicitely.
  * 
- * @type {() => import("esbuild").Plugin}
+ * @returns {import("esbuild").Plugin}
  */
 export default function azurePipelinesTaskLibFix() {
   return {
